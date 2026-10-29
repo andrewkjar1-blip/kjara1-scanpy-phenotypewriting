@@ -24,6 +24,7 @@ RUN mkdir -p /pipeline
 
 COPY scripts/persampleprocessing.py /pipeline/persampleprocessing.py
 COPY scripts/concatandwrite.py      /pipeline/concatandwrite.py
+COPY scripts/concatandwrite_pseudobulk.py      /pipeline/concatandwrite_pseudobulk.py
 
 RUN chmod +x /pipeline/persampleprocessing.py \
              /pipeline/concatandwrite.py
