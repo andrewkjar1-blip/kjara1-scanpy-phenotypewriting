@@ -18,6 +18,7 @@ RUN pip install --no-cache-dir \
         pandas==2.1.0 \
         numpy==1.26.0 \
         scipy==1.11.0 \
+        scikit-learn==1.4.0 \
         h5py==3.10.0
 
 RUN mkdir -p /pipeline
@@ -27,6 +28,7 @@ COPY scripts/concatandwrite.py      /pipeline/concatandwrite.py
 COPY scripts/concatandwrite_pseudobulk.py      /pipeline/concatandwrite_pseudobulk.py
 
 RUN chmod +x /pipeline/persampleprocessing.py \
-             /pipeline/concatandwrite.py
+             /pipeline/concatandwrite.py \
+             /pipeline/concatandwrite_pseudobulk.py
 
 WORKDIR /pipeline
