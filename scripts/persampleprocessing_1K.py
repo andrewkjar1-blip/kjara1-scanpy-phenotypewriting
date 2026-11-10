@@ -73,7 +73,7 @@ def extract_batch_string(filename: str) -> str:
 # ---------------------------------------------------------------------------
 def add_metadata_to_adata(adata, annotation_path: str, sample_col: str):
     """
-    Load annotation TSV, map metadata using the unified 'adata_sample' column,
+    Load annotation CSV, map metadata using the unified 'adata_sample' column,
     filter adata to matched samples, merge metadata into adata.obs, 
     and store new_metadata_cols in adata.uns['new_metadata_cols'].
 
@@ -84,7 +84,7 @@ def add_metadata_to_adata(adata, annotation_path: str, sample_col: str):
     matched_by : dict  {'Matched': int, 'Not found': int}
     """
     log.info("Loading pre-filtered annotation file: %s", annotation_path)
-    annotation = pd.read_csv(annotation_path, sep="\t")
+    annotation = pd.read_csv(annotation_path)
 
     # Set the index to the unified sample column for fast lookup/merging
     # Dropping rows without an index value just in case
