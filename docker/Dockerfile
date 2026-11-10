@@ -28,6 +28,7 @@ COPY scripts/concatandwrite.py      /pipeline/concatandwrite.py
 COPY scripts/concatandwrite_pseudobulk.py      /pipeline/concatandwrite_pseudobulk.py
 
 RUN chmod +x /pipeline/persampleprocessing.py \
+             /pipeline/persampleprocessing_1K.py \
              /pipeline/concatandwrite.py \
              /pipeline/concatandwrite_pseudobulk.py
 
